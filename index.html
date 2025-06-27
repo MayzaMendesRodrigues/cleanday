@@ -1,967 +1,945 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CleanDay | Estética</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="https://i.ibb.co/ZpKqXcYH/logo.png"
-    />
 
-    <style>
-      :root {
-        --primary: #4fd1c9;
-        --gold: #4fd1c9;
-        --white: #ffffff;
-        --light-gray: #f8f8f8;
-        --dark-gray: #333333;
-        --transition: all 0.4s ease;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CleanDay | Estética</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="https://i.ibb.co/ZpKqXcYH/logo.png" />
+
+  <style>
+    :root {
+      --primary: #4fd1c9;
+      --gold: #4fd1c9;
+      --white: #ffffff;
+      --light-gray: #f8f8f8;
+      --dark-gray: #333333;
+      --transition: all 0.4s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      color: var(--dark-gray);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-color: var(--white);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--white);
+      padding: 15px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: var(--transition);
+      border: 2px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: transparent;
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(79, 209, 201, 0.3);
+    }
+
+    .btn-whatsapp {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 100;
+      background: #25d366;
+      color: var(--white);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+      transition: var(--transition);
+      animation: pulse 2s infinite;
+    }
+
+    .btn-whatsapp:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+      animation: none;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
       }
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+      70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
       }
 
-      body {
-        font-family: "Montserrat", sans-serif;
-        color: var(--dark-gray);
-        line-height: 1.6;
-        overflow-x: hidden;
-        background-color: var(--white);
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
       }
+    }
 
-      h1,
-      h2,
-      h3,
-      h4 {
-        font-family: "Playfair Display", serif;
-        font-weight: 600;
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      padding: 15px 0;
+      transition: var(--transition);
+    }
+
+    header.scrolled {
+      padding: 10px 0;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo h1 {
+      font-size: 28px;
+      color: var(--dark-gray);
+      font-weight: 700;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .logo .dot {
+      color: var(--gold);
+      margin-left: 2px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav li {
+      margin-left: 30px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark-gray);
+      font-weight: 500;
+      position: relative;
+      padding: 5px 0;
+      transition: var(--transition);
+    }
+
+    nav a:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    nav a:hover:after {
+      width: 100%;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: var(--dark-gray);
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease forwards 0.5s;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
+    }
 
-      .container {
-        width: 90%;
-        max-width: 1200px;
-        margin: 0 auto;
+    .hero h2 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero .btn {
+      background: var(--gold);
+      border-color: var(--gold);
+      font-size: 1.1rem;
+      padding: 18px 40px;
+    }
+
+    .hero .btn:hover {
+      background: transparent;
+      color: var(--gold);
+    }
+
+    /* Services */
+    .services {
+      padding: 100px 0;
+      background: var(--light-gray);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+    }
+
+    .section-title h2:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--primary);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+      text-align: center;
+      padding: 40px 25px;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .service-card.appear {
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
+    }
 
-      .btn {
-        display: inline-block;
-        background: var(--primary);
-        color: var(--white);
-        padding: 15px 30px;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: var(--transition);
-        border: 2px solid transparent;
-        cursor: pointer;
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 25px;
+      background: rgba(79, 209, 201, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 30px;
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-icon {
+      background: var(--primary);
+      color: var(--white);
+      transform: scale(1.1);
+    }
+
+    .service-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: var(--dark-gray);
+    }
+
+    .service-card p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .service-price {
+      font-size: 1.2rem;
+      color: var(--gold);
+      font-weight: 700;
+      margin-top: 15px;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      padding: 100px 0;
+      background: var(--white);
+    }
+
+    .testimonials-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      background: var(--light-gray);
+      border-radius: 10px;
+      padding: 40px;
+      margin: 20px;
+      position: relative;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      opacity: 0;
+      transform: scale(0.95);
+      transition: var(--transition);
+    }
+
+    .testimonial-card.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .testimonial-card:before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 80px;
+      font-family: Georgia, serif;
+      color: var(--primary);
+      opacity: 0.2;
+      line-height: 1;
+    }
+
+    .testimonial-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .rating {
+      color: var(--gold);
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .rating i {
+      margin-right: 3px;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 25px;
+      color: #555;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .client-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .client-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 15px;
+      border: 3px solid var(--primary);
+    }
+
+    .client-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .client-details h4 {
+      margin-bottom: 5px;
+      color: var(--dark-gray);
+    }
+
+    .client-details p {
+      color: var(--primary);
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .testimonials-nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .testimonial-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ddd;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .testimonial-dot.active {
+      background: var(--primary);
+      transform: scale(1.2);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark-gray);
+      color: var(--white);
+      padding: 70px 0 20px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-col h3 {
+      font-size: 1.4rem;
+      margin-bottom: 25px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-col h3:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: var(--primary);
+    }
+
+    .contact-info {
+      list-style: none;
+    }
+
+    .contact-info li {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .contact-info i {
+      color: var(--primary);
+      margin-right: 10px;
+      font-size: 18px;
+      min-width: 20px;
+    }
+
+    .social-links {
+      display: flex;
+      margin-top: 25px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      margin-right: 10px;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background: var(--primary);
+      transform: translateY(-5px);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero h2 {
+        font-size: 2.8rem;
       }
+    }
 
-      .btn:hover {
-        background: transparent;
-        border-color: var(--primary);
-        color: var(--primary);
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(79, 209, 201, 0.3);
-      }
-
-      .btn-whatsapp {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        z-index: 100;
-        background: #25d366;
-        color: var(--white);
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 28px;
-        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-        transition: var(--transition);
-        animation: pulse 2s infinite;
-      }
-
-      .btn-whatsapp:hover {
-        transform: scale(1.1);
-        box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
-        animation: none;
-      }
-
-      @keyframes pulse {
-        0% {
-          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
-        }
-        70% {
-          box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-        }
-      }
-
-      /* Header */
-      header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        padding: 15px 0;
-        transition: var(--transition);
-      }
-
-      header.scrolled {
-        padding: 10px 0;
-      }
-
-      .header-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-      }
-
-      .logo h1 {
-        font-size: 28px;
-        color: var(--dark-gray);
-        font-weight: 700;
-      }
-
-      .logo span {
-        color: var(--primary);
-      }
-
-      .logo .dot {
-        color: var(--gold);
-        margin-left: 2px;
-      }
-
+    @media (max-width: 768px) {
       nav ul {
-        display: flex;
-        list-style: none;
-      }
-
-      nav li {
-        margin-left: 30px;
-      }
-
-      nav a {
-        text-decoration: none;
-        color: var(--dark-gray);
-        font-weight: 500;
-        position: relative;
-        padding: 5px 0;
-        transition: var(--transition);
-      }
-
-      nav a:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: var(--primary);
-        transition: var(--transition);
-      }
-
-      nav a:hover {
-        color: var(--primary);
-      }
-
-      nav a:hover:after {
-        width: 100%;
+        display: none;
       }
 
       .mobile-menu-btn {
-        display: none;
-        font-size: 24px;
-        background: none;
-        border: none;
-        color: var(--dark-gray);
-        cursor: pointer;
-      }
-
-      /* Hero Section */
-      .hero {
-        height: 100vh;
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-          url("https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-            no-repeat center center/cover;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        color: var(--white);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero-content {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 20px;
-        opacity: 0;
-        transform: translateY(30px);
-        animation: fadeUp 1s ease forwards 0.5s;
-      }
-
-      @keyframes fadeUp {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        display: block;
       }
 
       .hero h2 {
-        font-size: 3.5rem;
-        margin-bottom: 20px;
-        font-weight: 700;
+        font-size: 2.2rem;
       }
 
       .hero p {
-        font-size: 1.2rem;
-        margin-bottom: 30px;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
+        font-size: 1rem;
       }
 
-      .hero .btn {
-        background: var(--gold);
-        border-color: var(--gold);
-        font-size: 1.1rem;
-        padding: 18px 40px;
-      }
-
-      .hero .btn:hover {
-        background: transparent;
-        color: var(--gold);
-      }
-
-      /* Services */
-      .services {
-        padding: 100px 0;
-        background: var(--light-gray);
-      }
-
-      .section-title {
-        text-align: center;
-        margin-bottom: 60px;
-      }
-
-      .section-title h2 {
-        font-size: 2.5rem;
-        position: relative;
-        display: inline-block;
-        padding-bottom: 15px;
-      }
-
-      .section-title h2:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 3px;
-        background: var(--primary);
-      }
-
-      .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 30px;
+      .services,
+      .testimonials {
+        padding: 70px 0;
       }
 
       .service-card {
-        background: var(--white);
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        transition: var(--transition);
-        text-align: center;
-        padding: 40px 25px;
-        opacity: 0;
-        transform: translateY(20px);
+        padding: 30px 20px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero h2 {
+        font-size: 1.8rem;
       }
 
-      .service-card.appear {
-        animation: fadeIn 0.8s ease forwards;
+      .hero .btn {
+        padding: 15px 30px;
+        font-size: 1rem;
       }
 
-      @keyframes fadeIn {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+      .section-title h2 {
+        font-size: 2rem;
       }
 
-      .service-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      .location-features {
+        grid-template-columns: 1fr;
       }
+    }
+  </style>
+</head>
 
-      .service-icon {
-        width: 80px;
-        height: 80px;
-        margin: 0 auto 25px;
-        background: rgba(79, 209, 201, 0.1);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--primary);
-        font-size: 30px;
-        transition: var(--transition);
-      }
+<body>
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/5491134232507" class="btn-whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
-      .service-card:hover .service-icon {
-        background: var(--primary);
-        color: var(--white);
-        transform: scale(1.1);
-      }
+  <!-- Header -->
+  <header id="header">
+    <div class="container header-container">
+      <div class="logo">
+        <img src="https://i.ibb.co/ZpKqXcYH/logo.png" width="32" , height="48" />
+        <h1>CleanDay<span class="dot">.</span></h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#testimonials">Testimonios</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
 
-      .service-card h3 {
-        font-size: 1.4rem;
-        margin-bottom: 15px;
-        color: var(--dark-gray);
-      }
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h2>Belleza que trasciende</h2>
+      <p>
+        Descubrí tu mejor versión en nuestro exclusivo centro de estética en
+        el corazón de Villa Luro
+      </p>
+      <a href="https://wa.me/5491134232507" class="btn">Reservá tu primera sesión</a>
+    </div>
+  </section>
 
-      .service-card p {
-        color: #666;
-        margin-bottom: 20px;
-      }
-
-      .service-price {
-        font-size: 1.2rem;
-        color: var(--gold);
-        font-weight: 700;
-        margin-top: 15px;
-      }
-
-      /* Testimonials */
-      .testimonials {
-        padding: 100px 0;
-        background: var(--white);
-      }
-
-      .testimonials-container {
-        max-width: 900px;
-        margin: 0 auto;
-      }
-
-      .testimonial-card {
-        background: var(--light-gray);
-        border-radius: 10px;
-        padding: 40px;
-        margin: 20px;
-        position: relative;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        opacity: 0;
-        transform: scale(0.95);
-        transition: var(--transition);
-      }
-
-      .testimonial-card.active {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-      .testimonial-card:before {
-        content: "";
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        font-size: 80px;
-        font-family: Georgia, serif;
-        color: var(--primary);
-        opacity: 0.2;
-        line-height: 1;
-      }
-
-      .testimonial-content {
-        position: relative;
-        z-index: 1;
-      }
-
-      .rating {
-        color: var(--gold);
-        font-size: 18px;
-        margin-bottom: 20px;
-      }
-
-      .rating i {
-        margin-right: 3px;
-      }
-
-      .testimonial-text {
-        font-style: italic;
-        margin-bottom: 25px;
-        color: #555;
-        font-size: 1.1rem;
-        line-height: 1.8;
-      }
-
-      .client-info {
-        display: flex;
-        align-items: center;
-      }
-
-      .client-avatar {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        overflow: hidden;
-        margin-right: 15px;
-        border: 3px solid var(--primary);
-      }
-
-      .client-avatar img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .client-details h4 {
-        margin-bottom: 5px;
-        color: var(--dark-gray);
-      }
-
-      .client-details p {
-        color: var(--primary);
-        font-weight: 500;
-        font-size: 0.9rem;
-      }
-
-      .testimonials-nav {
-        display: flex;
-        justify-content: center;
-        margin-top: 40px;
-      }
-
-      .testimonial-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: #ddd;
-        margin: 0 5px;
-        cursor: pointer;
-        transition: var(--transition);
-      }
-
-      .testimonial-dot.active {
-        background: var(--primary);
-        transform: scale(1.2);
-      }
-
-      /* Footer */
-      footer {
-        background: var(--dark-gray);
-        color: var(--white);
-        padding: 70px 0 20px;
-      }
-
-      .footer-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 40px;
-        margin-bottom: 50px;
-      }
-
-      .footer-col h3 {
-        font-size: 1.4rem;
-        margin-bottom: 25px;
-        position: relative;
-        padding-bottom: 10px;
-      }
-
-      .footer-col h3:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 50px;
-        height: 2px;
-        background: var(--primary);
-      }
-
-      .contact-info {
-        list-style: none;
-      }
-
-      .contact-info li {
-        margin-bottom: 15px;
-        display: flex;
-        align-items: flex-start;
-      }
-
-      .contact-info i {
-        color: var(--primary);
-        margin-right: 10px;
-        font-size: 18px;
-        min-width: 20px;
-      }
-
-      .social-links {
-        display: flex;
-        margin-top: 25px;
-      }
-
-      .social-links a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.1);
-        color: var(--white);
-        margin-right: 10px;
-        transition: var(--transition);
-      }
-
-      .social-links a:hover {
-        background: var(--primary);
-        transform: translateY(-5px);
-      }
-
-      .copyright {
-        text-align: center;
-        padding-top: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        font-size: 0.9rem;
-        color: #aaa;
-      }
-
-      /* Responsive */
-      @media (max-width: 992px) {
-        .hero h2 {
-          font-size: 2.8rem;
-        }
-      }
-
-      @media (max-width: 768px) {
-        nav ul {
-          display: none;
-        }
-
-        .mobile-menu-btn {
-          display: block;
-        }
-
-        .hero h2 {
-          font-size: 2.2rem;
-        }
-
-        .hero p {
-          font-size: 1rem;
-        }
-
-        .services,
-        .testimonials {
-          padding: 70px 0;
-        }
-
-        .service-card {
-          padding: 30px 20px;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .hero h2 {
-          font-size: 1.8rem;
-        }
-
-        .hero .btn {
-          padding: 15px 30px;
-          font-size: 1rem;
-        }
-
-        .section-title h2 {
-          font-size: 2rem;
-        }
-
-        .location-features {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/5491134232507" class="btn-whatsapp" target="_blank">
-      <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Header -->
-    <header id="header">
-      <div class="container header-container">
-        <div class="logo">
-          <img
-            src="https://i.ibb.co/ZpKqXcYH/logo.png"
-            width="32"
-            ,
-            height="48"
-          />
-          <h1>CleanDay<span class="dot">.</span></h1>
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Nuestros Tratamientos</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-snowflake"></i>
+          </div>
+          <h3>Criolipólisis</h3>
+          <p>
+            Eliminación de grasa localizada mediante frío controlado sin
+            cirugía ni tiempo de recuperación.
+          </p>
+          <div class="service-price">Consultar Precio</div>
         </div>
-        <nav>
-          <ul>
-            <li><a href="#home">Inicio</a></li>
-            <li><a href="#services">Servicios</a></li>
-            <li><a href="#testimonials">Testimonios</a></li>
-            <li><a href="#contact">Contacto</a></li>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-wifi"></i>
+          </div>
+          <h3>Radiofrecuencia</h3>
+          <p>
+            Reafirmación facial y corporal mediante calor controlado que
+            estimula el colágeno.
+          </p>
+          <div class="service-price">Consultar Precio</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-burn"></i>
+          </div>
+          <h3>Depilación Láser</h3>
+          <p>
+            Eliminación definitiva del vello con tecnología láser de última
+            generación.
+          </p>
+          <div class="service-price">Consultar Precio</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-spa"></i>
+          </div>
+          <h3>Masajes Reductores</h3>
+          <p>
+            Terapias manuales que activan la circulación y reducen medidas de
+            forma natural.
+          </p>
+          <div class="service-price">Consultar Precio</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2>Lo que dicen nuestras clientas</h2>
+      </div>
+      <div class="testimonials-container">
+        <div class="testimonial-card active">
+          <div class="testimonial-content">
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "Son un grupo de trabajo genial. Muy profesionales con una
+              paciencia infinita y te asesoran sobre cada tratamiento. Hace 1
+              año y medio que voy y me siento súper acompañada. Son lo más!"
+            </p>
+            <div class="client-info">
+              <div class="client-avatar">
+                <img
+                  src="https://lh3.googleusercontent.com/a-/ALV-UjWGB9ZPxGBn4aVGiWGusP903HlbTVYLKynjJ_cv1L5CJXxdaWjy=w72-h72-p-rp-mo-br100"
+                  alt="Daniela Ombroni" />
+              </div>
+              <div class="client-details">
+                <h4>Daniela Ombroni</h4>
+                <!--<p>35 años, 8 sesiones de criolipólisis</p>-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "Lugar maravilloso , súper cálido! Las chicas amorosas .
+              Excelente atención y sobre todo muy profesionales . Altamente
+              recomendable"
+            </p>
+            <div class="client-info">
+              <div class="client-avatar">
+                <img
+                  src="https://lh3.googleusercontent.com/a-/ALV-UjWa-nK9q0Z4tpOkpNw0iHhyRGs2KQASc1SLhedlYKRx6-zZQzs=w72-h72-p-rp-mo-br100"
+                  alt="Patricia Maceri" />
+              </div>
+              <div class="client-details">
+                <h4>Patricia Maceri</h4>
+                <!--<p>48 años, 10 sesiones de radiofrecuencia</p>-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="testimonial-text">
+              "Excelente lugar, la atención de todas es muy profesional,
+              cálida y dedicada. Voy desde 2021 y no las cambiaría por nada
+              💕"
+            </p>
+            <div class="client-info">
+              <div class="client-avatar">
+                <img
+                  src="https://lh3.googleusercontent.com/a/ACg8ocKbbbN97QlUEzNcXUTWz21j_pr81ebzYAE4f7Qn9Q4377vMUA=w72-h72-p-rp-mo-br100"
+                  alt="Maria Lo Nero" />
+              </div>
+              <div class="client-details">
+                <h4>Maria Lo Nero</h4>
+                <!--<p>29 años, tratamiento láser completo</p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonials-nav">
+          <div class="testimonial-dot active"></div>
+          <div class="testimonial-dot"></div>
+          <div class="testimonial-dot"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>CleanDay Estética</h3>
+          <p>
+            Tu centro de bienestar y belleza premium en Villa Luro. Ofrecemos
+            tratamientos avanzados con tecnología de última generación y
+            profesionales altamente capacitados.
+          </p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/cleandayestetic/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/CleanDay.com.ar">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://wa.me/5491134232507"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://maps.app.goo.gl/ARzYLrzUhjbvpVch7">
+              <i class="fas fa-map-marker-alt"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Contacto</h3>
+          <ul class="contact-info">
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Elpidio González 5350, CABA</span>
+            </li>
+            <li>
+              <i class="fas fa-phone"></i>
+              <span>+54 11 3423-2507</span>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <span></span>
+            </li>
+            <li>
+              <i class="fas fa-clock"></i>
+              <span>Lun-Vie: 9:00 - 20:00<br />Sáb: 10:00 - 18:00</span>
+            </li>
           </ul>
-        </nav>
-        <button class="mobile-menu-btn">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-      <div class="hero-content">
-        <h2>Belleza que trasciende</h2>
-        <p>
-          Descubrí tu mejor versión en nuestro exclusivo centro de estética en
-          el corazón de Villa Luro
-        </p>
-        <a href="https://wa.me/5491134232507" class="btn"
-          >Reservá tu primera sesión con 20% OFF</a
-        >
-      </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-      <div class="container">
-        <div class="section-title">
-          <h2>Nuestros Tratamientos</h2>
         </div>
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-snowflake"></i>
-            </div>
-            <h3>Criolipólisis</h3>
-            <p>
-              Eliminación de grasa localizada mediante frío controlado sin
-              cirugía ni tiempo de recuperación.
-            </p>
-            <div class="service-price">Consultar Precio</div>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-wifi"></i>
-            </div>
-            <h3>Radiofrecuencia</h3>
-            <p>
-              Reafirmación facial y corporal mediante calor controlado que
-              estimula el colágeno.
-            </p>
-            <div class="service-price">Consultar Precio</div>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-burn"></i>
-            </div>
-            <h3>Depilación Láser</h3>
-            <p>
-              Eliminación definitiva del vello con tecnología láser de última
-              generación.
-            </p>
-            <div class="service-price">Consultar Precio</div>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-spa"></i>
-            </div>
-            <h3>Masajes Reductores</h3>
-            <p>
-              Terapias manuales que activan la circulación y reducen medidas de
-              forma natural.
-            </p>
-            <div class="service-price">Consultar Precio</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-      <div class="container">
-        <div class="section-title">
-          <h2>Lo que dicen nuestras clientas</h2>
-        </div>
-        <div class="testimonials-container">
-          <div class="testimonial-card active">
-            <div class="testimonial-content">
-              <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <p class="testimonial-text">
-                "Son un grupo de trabajo genial. Muy profesionales con una
-                paciencia infinita y te asesoran sobre cada tratamiento. Hace 1
-                año y medio que voy y me siento súper acompañada. Son lo más!"
-              </p>
-              <div class="client-info">
-                <div class="client-avatar">
-                  <img
-                    src="https://lh3.googleusercontent.com/a-/ALV-UjWGB9ZPxGBn4aVGiWGusP903HlbTVYLKynjJ_cv1L5CJXxdaWjy=w72-h72-p-rp-mo-br100"
-                    alt="Daniela Ombroni"
-                  />
-                </div>
-                <div class="client-details">
-                  <h4>Daniela Ombroni</h4>
-                  <p>35 años, 8 sesiones de criolipólisis</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-content">
-              <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <p class="testimonial-text">
-                "Lugar maravilloso , súper cálido! Las chicas amorosas .
-                Excelente atención y sobre todo muy profesionales . Altamente
-                recomendable"
-              </p>
-              <div class="client-info">
-                <div class="client-avatar">
-                  <img
-                    src="https://lh3.googleusercontent.com/a-/ALV-UjWa-nK9q0Z4tpOkpNw0iHhyRGs2KQASc1SLhedlYKRx6-zZQzs=w72-h72-p-rp-mo-br100"
-                    alt="Patricia Maceri"
-                  />
-                </div>
-                <div class="client-details">
-                  <h4>Patricia Maceri</h4>
-                  <p>48 años, 10 sesiones de radiofrecuencia</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-content">
-              <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-              </div>
-              <p class="testimonial-text">
-                "Excelente lugar, la atención de todas es muy profesional,
-                cálida y dedicada. Voy desde 2021 y no las cambiaría por nada
-                💕"
-              </p>
-              <div class="client-info">
-                <div class="client-avatar">
-                  <img
-                    src="https://lh3.googleusercontent.com/a/ACg8ocKbbbN97QlUEzNcXUTWz21j_pr81ebzYAE4f7Qn9Q4377vMUA=w72-h72-p-rp-mo-br100"
-                    alt="Maria Lo Nero"
-                  />
-                </div>
-                <div class="client-details">
-                  <h4>Maria Lo Nero</h4>
-                  <p>29 años, tratamiento láser completo</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="testimonials-nav">
-            <div class="testimonial-dot active"></div>
-            <div class="testimonial-dot"></div>
-            <div class="testimonial-dot"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-col">
-            <h3>CleanDay Estética</h3>
-            <p>
-              Tu centro de bienestar y belleza premium en Villa Luro. Ofrecemos
-              tratamientos avanzados con tecnología de última generación y
-              profesionales altamente capacitados.
-            </p>
-            <div class="social-links">
-              <a href="https://www.instagram.com/cleandayestetic/"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a href="https://www.facebook.com/CleanDay.com.ar">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="https://wa.me/5491134232507"
-                ><i class="fab fa-whatsapp"></i
-              ></a>
-              <a href="https://maps.app.goo.gl/ARzYLrzUhjbvpVch7">
-                <i class="fas fa-map-marker-alt"></i>
-              </a>
-            </div>
-          </div>
-          <div class="footer-col">
-            <h3>Contacto</h3>
-            <ul class="contact-info">
-              <li>
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Elpidio González 5350, CABA</span>
-              </li>
-              <li>
-                <i class="fas fa-phone"></i>
-                <span>+54 11 3423-2507</span>
-              </li>
-              <li>
-                <i class="fas fa-envelope"></i>
-                <span>hola@cleanday.com.ar</span>
-              </li>
-              <li>
-                <i class="fas fa-clock"></i>
-                <span>Lun-Vie: 9:00 - 20:00<br />Sáb: 10:00 - 18:00</span>
-              </li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h3>Newsletter</h3>
-            <p>
-              Suscribite para recibir promociones exclusivas y consejos de
-              belleza.
-            </p>
-            <form>
-              <input
-                type="email"
-                placeholder="Tu email"
-                style="
+        <div class="footer-col">
+          <h3>Newsletter</h3>
+          <p>
+            Suscribite para recibir promociones exclusivas y consejos de
+            belleza.
+          </p>
+          <form>
+            <input type="email" placeholder="Tu email" style="
                   width: 100%;
                   padding: 12px;
                   margin-bottom: 15px;
                   border-radius: 4px;
                   border: 1px solid #ddd;
-                "
-              />
-              <button type="submit" class="btn" style="width: 100%">
-                Suscribirme
-              </button>
-            </form>
-          </div>
-        </div>
-        <div class="copyright">
-          <p>&copy; 2023 CleanDay Estética. Todos los derechos reservados.</p>
+                " />
+            <button type="submit" class="btn" style="width: 100%">
+              Suscribirme
+            </button>
+          </form>
         </div>
       </div>
-    </footer>
+      <div class="copyright">
+        <p>&copy; 2023 CleanDay Estética. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
 
-    <script>
-      // Header scroll effect
-      window.addEventListener("scroll", function () {
-        const header = document.getElementById("header");
-        if (window.scrollY > 50) {
-          header.classList.add("scrolled");
-        } else {
-          header.classList.remove("scrolled");
-        }
-      });
+  <script>
+    // Header scroll effect
+    window.addEventListener("scroll", function () {
+      const header = document.getElementById("header");
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
 
-      // Service cards animation
-      document.addEventListener("DOMContentLoaded", function () {
-        const serviceCards = document.querySelectorAll(".service-card");
+    // Service cards animation
+    document.addEventListener("DOMContentLoaded", function () {
+      const serviceCards = document.querySelectorAll(".service-card");
 
-        function checkScroll() {
-          serviceCards.forEach((card, index) => {
-            const cardPosition = card.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.3;
+      function checkScroll() {
+        serviceCards.forEach((card, index) => {
+          const cardPosition = card.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight / 1.3;
 
-            if (cardPosition < screenPosition) {
-              setTimeout(() => {
-                card.classList.add("appear");
-              }, index * 200);
-            }
-          });
-        }
-
-        window.addEventListener("scroll", checkScroll);
-        checkScroll(); // Check on load
-      });
-
-      // Testimonial slider
-      document.addEventListener("DOMContentLoaded", function () {
-        const testimonialCards = document.querySelectorAll(".testimonial-card");
-        const dots = document.querySelectorAll(".testimonial-dot");
-        let currentIndex = 0;
-
-        function showTestimonial(index) {
-          testimonialCards.forEach((card) => card.classList.remove("active"));
-          dots.forEach((dot) => dot.classList.remove("active"));
-
-          testimonialCards[index].classList.add("active");
-          dots[index].classList.add("active");
-        }
-
-        dots.forEach((dot, index) => {
-          dot.addEventListener("click", () => {
-            currentIndex = index;
-            showTestimonial(currentIndex);
-          });
-        });
-
-        // Auto rotate testimonials
-        setInterval(() => {
-          currentIndex = (currentIndex + 1) % testimonialCards.length;
-          showTestimonial(currentIndex);
-        }, 4000);
-      });
-
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            window.scrollTo({
-              top: target.offsetTop - 80,
-              behavior: "smooth",
-            });
+          if (cardPosition < screenPosition) {
+            setTimeout(() => {
+              card.classList.add("appear");
+            }, index * 200);
           }
         });
+      }
+
+      window.addEventListener("scroll", checkScroll);
+      checkScroll(); // Check on load
+    });
+
+    // Testimonial slider
+    document.addEventListener("DOMContentLoaded", function () {
+      const testimonialCards = document.querySelectorAll(".testimonial-card");
+      const dots = document.querySelectorAll(".testimonial-dot");
+      let currentIndex = 0;
+
+      function showTestimonial(index) {
+        testimonialCards.forEach((card) => card.classList.remove("active"));
+        dots.forEach((dot) => dot.classList.remove("active"));
+
+        testimonialCards[index].classList.add("active");
+        dots[index].classList.add("active");
+      }
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          currentIndex = index;
+          showTestimonial(currentIndex);
+        });
       });
-    </script>
-  </body>
+
+      // Auto rotate testimonials
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % testimonialCards.length;
+        showTestimonial(currentIndex);
+      }, 4000);
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: "smooth",
+          });
+        }
+      });
+    });
+  </script>
+</body>
+
 </html>
