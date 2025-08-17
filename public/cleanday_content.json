@@ -1,0 +1,23 @@
+{
+  "reviews": [
+    {
+      "published_at": 1752872913,
+      "rating": 5,
+      "reviewer_name": "Daniela Ombroni",
+      "reviewer_picture_url": "https://lh3.googleusercontent.com/a-/ALV-UjWGB9ZPxGBn4aVGiWGusP903HlbTVYLKynjJ_cv1L5CJXxdaWjy=w72-h72-p-rp-mo-br100",
+      "text": "Son un grupo de trabajo genial. Muy profesionales con una paciencia infinita y te asesoran sobre cada tratamiento. Hace 1 año y medio que voy y me siento súper acompañada. Son lo más!"
+    },
+    {
+      "rating": 5,
+      "reviewer_name": "Patricia Maceri",
+      "reviewer_picture_url": "https://lh3.googleusercontent.com/a-/ALV-UjWa-nK9q0Z4tpOkpNw0iHhyRGs2KQASc1SLhedlYKRx6-zZQzs=w72-h72-p-rp-mo-br100",
+      "text": "Lugar maravilloso , súper cálido! Las chicas amorosas . Excelente atención y sobre todo muy profesionales . Altamente recomendable"
+    },
+    {
+      "rating": 4.5,
+      "reviewer_name": "Maria Lo Nero",
+      "reviewer_picture_url": "https://lh3.googleusercontent.com/a/ACg8ocKbbbN97QlUEzNcXUTWz21j_pr81ebzYAE4f7Qn9Q4377vMUA=w72-h72-p-rp-mo-br100",
+      "text": "Excelente lugar, la atención de todas es muy profesional, cálida y dedicada. Voy desde 2021 y no las cambiaría por nada 💕"
+    }
+  ]
+}

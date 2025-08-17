@@ -1,0 +1,15 @@
+.cta {
+  text-align: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
+    url("https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80") center/cover no-repeat;
+  color: var(--light);
+}
+
+.contact .container {
+  display: grid;
+  justify-items: center;
+}
+
+.newsletter {
+  width: 300px;
+}
